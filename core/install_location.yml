@@ -1,0 +1,10 @@
+# Shotgun Pipeline Toolkit configuration file
+# This file was automatically created by tank clone
+# This file reflects the paths in the pipeline configuration
+# entity which is associated with this location (Primary Clone).
+
+Windows: '\\ALFRED\Post-3D-VFX\ShotgunToolkit_clone'
+Darwin: '/Volumes/Post-3D-VFX/ShotgunToolkit_clone'
+Linux: ''
+
+# End of file.
