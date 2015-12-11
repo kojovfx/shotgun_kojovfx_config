@@ -258,9 +258,13 @@ paths:
     maya_shot_publish:
         definition: '@shot_root/publish/maya/{name}.v{version}.ma'
         root_name: 'primary'
-    # Vray renders, <Scene>/<Scene>_<Layer>/<Scene>_<Layer>
+    # Location of renders, <Scene>_<Version>/<Scene>_<Layer>/<Scene>_<Layer>
     maya_shot_render:
-        definition: '@shot_root/work/maya/images/{name}/{name}_{maya.layer_name}/{name}_{maya.layer_name}.{SEQ}.exr'
+        definition: '@shot_root/work/maya/images/{name}_v{version}/{name}_{maya.layer_name}/{name}_{maya.layer_name}.{SEQ}.exr'
+        root_name: 'primary'
+    #When renders are published, they go here
+    maya_shot_render_pub:
+        definition: '@shot_root/publish/maya/images/{name}_v{version}/{name}_{maya.layer_name}/{name}_{maya.layer_name}.{SEQ}.exr'
         root_name: 'primary'
 
     #

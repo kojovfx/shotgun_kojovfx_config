@@ -1,5 +1,6 @@
 #test
 #another test
+#final final test
 # Copyright (c) 2015 Shotgun Software Inc.
 #
 # CONFIDENTIAL AND PROPRIETARY
@@ -263,8 +264,8 @@ launch_nuke:
   defer_keyword: ''
   engine: tk-nuke
   extra: {}
-  hook_app_launch: default
-  hook_before_app_launch: default
+  hook_app_launch: nuke_app_launch
+  hook_before_app_launch: before_app_launch
   icon: '{target_engine}/icon_256.png'
   linux_args: ''
   linux_path: '@nuke_linux'
@@ -274,10 +275,11 @@ launch_nuke:
     name: tk-multi-launchapp
   mac_args: ''
   mac_path: '@nuke_mac'
-  menu_name: Launch Nuke
-  versions: []
+  menu_name: 'Launch Nuke {version}'
+  versions: ['nuke','nukex']
   windows_args: ''
   windows_path: '@nuke_windows'
+
 #
 # -------------------------------------------------
 # Photoshop

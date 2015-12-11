@@ -297,9 +297,9 @@ engines:
         hook_post_publish: default
         hook_primary_pre_publish: default
         hook_primary_publish: default
-        hook_scan_scene: default
-        hook_secondary_pre_publish: default
-        hook_secondary_publish: default
+        hook_scan_scene: maya\scan_scene
+        hook_secondary_pre_publish: maya\secondary_pre_publish
+        hook_secondary_publish: maya\secondary_publish
         hook_thumbnail: default
         location: {name: tk-multi-publish, type: app_store, version: v0.7.4}
         primary_description: Publish and version up the current Maya scene
@@ -308,8 +308,24 @@ engines:
         primary_publish_template: maya_shot_publish
         primary_scene_item_type: work_file
         primary_tank_type: Maya Scene
-        secondary_outputs: []
+        secondary_outputs:
+        - {description: Publish a rendered image sequence, display_group: Renders,
+          display_name: Rendered, group_name: default, icon: icons/publish_nuke_writenode.png,
+          name: rendered_image, publish_group: false, publish_template: maya_shot_render,
+          required: false, scene_item_type: rendered_image, selected: false, tank_type: Rendered
+            Image}
         template_work: maya_shot_work
+      tk-multi-reviewsubmission:
+        codec_settings_hook: '{self}/codec_settings.py'
+        location: {name: tk-multi-reviewsubmission, type: app_store, version: v0.2.0}
+        movie_height: 540
+        movie_path_template: nuke_shot_render_movie
+        movie_width: 1024
+        new_version_status: rev
+        slate_logo: icons/review_submit_logo.png
+        store_on_disk: true
+        upload_to_shotgun: true
+        version_number_padding: 3
       tk-multi-screeningroom: '@launch_screeningroom'
       tk-multi-setframerange:
         location: {name: tk-multi-setframerange, type: app_store, version: v0.2.4}
@@ -545,6 +561,11 @@ engines:
         upload_to_shotgun: true
         version_number_padding: 3
       tk-multi-screeningroom: '@launch_screeningroom'
+      tk-multi-setResolution:
+        location: {path: 'https://github.com/kojovfx/tk-multi-setResolution.git',
+          type: git, version: v0.2.4}
+        sg_in_frame_field: width
+        sg_out_frame_field: height
       tk-multi-setframerange:
         location: {name: tk-multi-setframerange, type: app_store, version: v0.2.4}
         sg_in_frame_field: sg_cut_in
