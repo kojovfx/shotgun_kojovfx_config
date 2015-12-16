@@ -162,7 +162,7 @@ launch_hiero:
   mac_path: '@hiero_mac'
   menu_name: Launch Hiero
   versions: []
-  windows_args: --hiero
+  windows_args: --studio
   windows_path: '@hiero_win'
 #
 # -------------------------------------------------
