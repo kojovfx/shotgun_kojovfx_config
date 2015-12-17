@@ -492,6 +492,7 @@ engines:
           Flame Render: [read_node]
           Nuke Script: [script_import]
           Rendered Image: [read_node]
+          Hiero Plate: [read_node]
         actions_hook: '{self}/tk-nuke_actions.py'
         download_thumbnails: true
         entities:
@@ -550,7 +551,7 @@ engines:
           selected: true, tank_type: unused}
         template_work: nuke_shot_work
       tk-multi-reviewsubmission:
-        codec_settings_hook: '{self}/codec_settings.py'
+        codec_settings_hook: nuke_reviewsubmission_codec_settings
         location: {name: tk-multi-reviewsubmission, type: app_store, version: v0.2.0}
         movie_height: 540
         movie_path_template: nuke_shot_render_movie
