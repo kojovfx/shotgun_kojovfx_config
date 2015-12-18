@@ -489,6 +489,7 @@ engines:
           Hiero Plate: [read_node]
           Nuke Script: [script_import]
           Rendered Image: [read_node]
+          Hiero Plate: [read_node]
         actions_hook: '{self}/tk-nuke_actions.py'
         download_thumbnails: true
         entities:
