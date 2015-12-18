@@ -14,3 +14,4 @@ core/interpreter_Darwin.cfg
 core/interpreter_Linux.cfg
 core/interpreter_Windows.cfg
 core/pipeline_configuration.yml
+Thumbs.db
