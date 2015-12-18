@@ -256,6 +256,13 @@ engines:
     - {app_instance: tk-multi-publish, name: Publish...}
   tk-maya:
     apps:
+      tk-maya-playblast:
+        current_scene_template: maya_shot_work
+        height: 540
+        location: {path: 'https://github.com/kojovfx/tk-maya-playblast.git', type: git,
+          version: v0.0.2}
+        playblast_template: maya_shot_playblast
+        width: 1024
       tk-multi-about: '@about'
       tk-multi-breakdown:
         hook_scene_operations: '{self}/tk-maya_scene_operations.py'
@@ -315,17 +322,6 @@ engines:
           required: false, scene_item_type: rendered_image, selected: false, tank_type: Rendered
             Image}
         template_work: maya_shot_work
-      tk-multi-reviewsubmission:
-        codec_settings_hook: '{self}/codec_settings.py'
-        location: {name: tk-multi-reviewsubmission, type: app_store, version: v0.2.0}
-        movie_height: 540
-        movie_path_template: nuke_shot_render_movie
-        movie_width: 1024
-        new_version_status: rev
-        slate_logo: icons/review_submit_logo.png
-        store_on_disk: true
-        upload_to_shotgun: true
-        version_number_padding: 3
       tk-multi-screeningroom: '@launch_screeningroom'
       tk-multi-setframerange:
         location: {name: tk-multi-setframerange, type: app_store, version: v0.2.4}
@@ -378,7 +374,7 @@ engines:
         template_work_area: shot_work_area_maya
         version_compare_ignore_fields: []
     compatibility_dialog_min_version: 2015
-    debug_logging: false
+    debug_logging: true
     location: {name: tk-maya, type: app_store, version: v0.5.4}
     menu_favourites:
     - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
@@ -490,6 +486,7 @@ engines:
         action_mappings:
           Flame Quicktime: [read_node]
           Flame Render: [read_node]
+          Hiero Plate: [read_node]
           Nuke Script: [script_import]
           Rendered Image: [read_node]
         actions_hook: '{self}/tk-nuke_actions.py'
@@ -550,7 +547,7 @@ engines:
           selected: true, tank_type: unused}
         template_work: nuke_shot_work
       tk-multi-reviewsubmission:
-        codec_settings_hook: '{self}/codec_settings.py'
+        codec_settings_hook: nuke_reviewsubmission_codec_settings
         location: {name: tk-multi-reviewsubmission, type: app_store, version: v0.2.0}
         movie_height: 540
         movie_path_template: nuke_shot_render_movie

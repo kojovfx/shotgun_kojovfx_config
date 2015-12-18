@@ -39,7 +39,7 @@ engines:
   tk-flare: '@std_flame_flare'
   tk-hiero:
     apps:
-      tk-hiero-export:
+      tk-hiero-export-kojo:
         audio_published_file_type: Hiero Audio
         custom_template_fields: []
         default_task_filter: '[[''step.Step.code'', ''is'', ''Comp'']]'
@@ -53,7 +53,8 @@ engines:
         hook_translate_template: default
         hook_update_version_data: default
         hook_upload_thumbnail: default
-        location: {name: tk-hiero-export, type: app_store, version: v0.2.5}
+        location: {path: 'https://github.com/kojovfx/tk-hiero-export-kojo.git', type: git,
+          version: v0.2.5}
         nuke_script_published_file_type: Nuke Script
         nuke_script_toolkit_write_nodes:
         - {channel: stereoexr32, name: 'Stereo Exr, 32 bit'}
@@ -128,7 +129,7 @@ engines:
     - {app_instance: tk-multi-publish, keep_in_menu: false, name: Publish Project...,
       requires_selection: true}
     compatibility_dialog_min_version: 10
-    debug_logging: false
+    debug_logging: true
     favourite_directories: []
     location: {name: tk-nuke, type: app_store, version: v0.4.1}
     menu_favourites:

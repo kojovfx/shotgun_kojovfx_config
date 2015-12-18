@@ -88,6 +88,8 @@ keys:
         alias: DD
     project:
         type: str
+    hiero.track:
+        type: str
 
     # These are used for the Mari UDIM pipeline:
     UDIM:
@@ -266,6 +268,13 @@ paths:
     maya_shot_render_pub:
         definition: '@shot_root/publish/maya/images/{name}_v{version}/{name}_{maya.layer_name}/{name}_{maya.layer_name}.{SEQ}.exr'
         root_name: 'primary'
+    #playblast
+    maya_shot_playblast:
+        definition: '@shot_root/work/maya/images/{name}_playblast_v{version}/{name}_v{version}'
+        root_name: 'primary'
+    maya_shot_playblast_mov:
+        definition: '@shot_root/work/maya/images/{name}_playblast_v{version}/{name}_v{version}.mov'
+        root_name: 'primary'
 
     #
     # Houdini
@@ -404,7 +413,7 @@ paths:
 
     # export of shot asset data from hiero
     hiero_plate_path:
-        definition: 'sequences/{Sequence}/{Shot}/editorial/{YYYY}_{MM}_{DD}/plates/{project}_{Shot}.mov'
+        definition: 'sequences/{Sequence}/{Shot}/editorial/plates/{hiero.track}/v{version}/{Sequence}_{Shot}_{hiero.track}_v{version}.{SEQ}.dpx'
         root_name: 'primary'
     hiero_render_path:
         definition: 'sequences/{Sequence}/{Shot}/editorial/{YYYY}_{MM}_{DD}/renders/{project}_{Shot}.{SEQ}.dpx'
